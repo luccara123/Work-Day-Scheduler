@@ -14,5 +14,16 @@ var sevenPm = $("#07pm");
 
 //Adding time with moment.js
 
-var currentDate = moment().format('dddd') + " " + moment().format("DO MMM YYYY");
+var currentDate = moment().format('dddd') + " " + moment().format("YYYY MMMM Do");
 var currentHour = moment().format('h:mmm:ss a');
+
+
+// Time: date and hour with setinterval
+
+var time = setInterval(() => {
+    var currentTime = moment();
+    $('#currentDay').html(currentTime.format('YYYY MMMM Do') + ' ' +  
+    currentTime.format('dddd').toUpperCase());
+
+   $('#currentDay').html(currentDate + " " + currentTime.format('hh:mm:ss a'));
+}, 100);
